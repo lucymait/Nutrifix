@@ -1,6 +1,8 @@
 ### ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) General Assembly, Software Engineering Immersive
 # NutriFix™
 
+![Home](/images/home.png)
+
 by [Lucy Maitland](https://github.com/lucymait), [Hanna Truong Thi](https://github.com/hvan307) , [Tom Bannister](https://github.com/tombannister01) & [Finlay Whittington Devereux](https://github.com/Fin101)
 
 ## Overview
@@ -467,6 +469,31 @@ After the user has submitted the new ingredient, handleSubmit(event) adds the it
     })
   }
 ```
+## Screenshots
+
+### Welcome Page
+![Welcome Page](/images/welcome.png)
+
+### All Recipes Page
+![All Recipes Page](/images/recipes.png)
+
+### My Recipes Page
+![My Recipes Page](/images/myrecipe.png)
+
+### Edit/Delete My Recipe
+![Edit/Delete My Recipe](/images/edit.png)
+
+### Search Ingredients Page
+![Search Ingredients Page](/images/ingredient.png)
+
+### Shopping List Page
+![Shopping List Page](/images/shoppingList.png)
+
+### Register Page
+![Register Page](/images/register.png)
+
+### Login Page
+![Login Page](/images/login.png)
 
 ## Potential Future Features
 

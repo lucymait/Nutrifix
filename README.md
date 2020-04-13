@@ -1,11 +1,47 @@
 ### ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) General Assembly, Software Engineering Immersive
 # NutriFix™
 
+by [Lucy Maitland](https://github.com/lucymait), [Hanna Truong Thi](https://github.com/hvan307) , [Tom Bannister](https://github.com/tombannister01) & [Finlay Whittington Devereux](https://github.com/Fin101)
+
 ## Overview
+
+Nutrifix is my third project, with General Assembly, during the software engineering immersive course. Myself and 3 others had to build a full-stack application within **one week**.
+
+After deliberation, we decicded to create a nutrition and recipe app, where users can:
+
+- View a list of recipes and filter by category (gluten-free, low carbs, vegan, etc.)
+- Create their own recipe, which will be stored in 'My Recipes'
+- Can edit and delete their own recipe
+- Search for the macronutrients of any ingredient (using an extrernal API)
+- Create a shopping list 
+
+Check out some of the delicious recipes [here](https://nutrifixrecipes.herokuapp.com/recipes), on the GitHub repo.
 
 ## Brief
 
+- Build a full-stack app
+- Use an Express API, to serve your data from a Mongo database
+- Consume a separate, Public API
+- Front-end built with React
+- Have several components - At least one classical and one functional.
+- The app should include a router - with several "pages".
+- Be deployed online and accessible to the public.
+
 ## Technologies Used
+
+- JavaScript (ES6)
+- React.js
+- Node.js
+- Express
+- Mongo and Mongoose
+- HTML, JSX
+- CSS
+- FoodDatabase API
+- Axios
+- Webpack
+- Git and GitHub
+- Bulma, SCSS
+- Google Fonts
 
 # Approach
 

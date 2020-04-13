@@ -10,6 +10,20 @@ html, body {
   flex-direction: row;
 }
 
+.subtitle.nutrition {
+  color:white !important;
+  font-style: italic;
+  font-size: 23px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  text-shadow: 2px 2px black;
+
+}
+
+.logo {
+margin-top: 30px;
+}
+
 .hero {
   // background-image: url('https://res.cloudinary.com/sanitarium/image/fetch/q_auto/https://www.sanitarium.com.au/getmedia%2Fae51f174-984f-4a70-ad3d-3f6b517b6da1%2Ffruits-vegetables-healthy-fats.jpg%3Fwidth%3D1180%26height%3D524%26ext%3D.jpg');
   // background-image: url('https://www.anourishedlifenutrition.com/wp-content/uploads/2016/07/vegetables-wooden-background-croppedx2.jpg');
@@ -23,6 +37,10 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.hero-body {
+  padding-bottom: 20px !important;
 }
 
 .homepage-text {
@@ -84,6 +102,16 @@ li {
   box-shadow: 1px 1px #afaaaa;
 }
 
+button.button.is-normal {
+  background-color: #ffad00;
+  font-weight: bold;
+  opacity: 0.9;
+  border-radius: 90px;
+  font-size: 15px;
+  border: 3px solid white;
+  color: black !important;
+}
+
 .subtitle.recipe {
   font-family: 'Merienda', cursive;
 }
@@ -105,9 +133,10 @@ li {
   background-color: rgba(0, 0, 0, 0.2) !important;
 }
 .tabs.is-boxed a {
-  font-weight: 700;
+  font-weight: 900;
   border-bottom: none ;
-  text-shadow: 1px 1px black;
+  text-shadow: 2px 2px black;
+  color: white !important;
     // border-radius: 4px;
 }
 
@@ -136,6 +165,11 @@ li {
 
 .a.navbar-item {
   background-color: transparent;
+}
+
+div.navbar-item {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #big-container {

@@ -12,10 +12,11 @@ const Hero = () => {
 
     <div className="hero-body">
       <div className="container has-text-centered">
-        <p className="title nutrifix">
+        <img src={('../images/LogoMakr_7lMK7T.png')} alt="Logo" width="400px" height="80px" className="logo"/>
+        {/* <p className="title nutrifix">
           NutriFix<small>™</small>
-        </p>
-        <p className="subtitle">
+        </p> */}
+        <p className="subtitle nutrition">
           Making Nutrition Quick And Easy
         </p>
       </div>

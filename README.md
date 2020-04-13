@@ -15,7 +15,7 @@ After deliberation, we decicded to create a nutrition and recipe app, where user
 - Search for the macronutrients of any ingredient (using an extrernal API)
 - Create a shopping list 
 
-Check out some of the delicious recipes [here](https://nutrifixrecipes.herokuapp.com/recipes), on the GitHub repo.
+Check out some of the delicious recipes on Nutrifix, [here](https://nutrifixrecipes.herokuapp.com/recipes).
 
 ## Brief
 
@@ -42,8 +42,6 @@ Check out some of the delicious recipes [here](https://nutrifixrecipes.herokuapp
 - Git and GitHub
 - Bulma, SCSS
 - Google Fonts
-
-# Approach
 
 # Backend
 

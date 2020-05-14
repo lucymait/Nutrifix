@@ -1,9 +1,39 @@
 ### ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) General Assembly, Software Engineering Immersive
-# NutriFix™
-
+![logo](frontend/src/images/LogoMakr_82IDJL.png)
 ![Home](/images/home.png)
 
 by [Lucy Maitland](https://github.com/lucymait), [Hanna Truong Thi](https://github.com/hvan307) , [Tom Bannister](https://github.com/tombannister01) & [Finlay Whittington Devereux](https://github.com/Fin101)
+
+## Table of Contents
+1. [Overview](#Overview)
+2. [Brief](#Brief)
+3. [Technologies Used](#Technologies-Used)
+4. [Backend](#Backend)
+    - [Approach](#Approach)
+    - [Models](#Models)
+      - [User Model](#1.-User-Model)
+      - [Recipe Model](#2.-Recipe-Model)
+    - [Controllers](#Controllers)
+      - [User Controller](#1.-User-Controller)
+      - [Recipe Controller](#2.-Recipe-Controller)
+    - [Security](#Security)
+      - [Secure Routes](#Secure-Routes)
+      - [Bcrypt](#Bcrypt)
+      - [Token](#Token)
+5. [Frontend](#Frontend)
+    - [Display Recipes](#Display-Recipes)
+      - [Tags](#Tags)
+      - [Rendering Recipes](#Rendering-Recipes)
+      - [My Recipes](#My-Recipes-(creating-your-own))
+      - [Single Recipe](#Single-Recipe)
+6. [Navbar](#Navbar)
+7. [Ingredient Search](#Ingredient-Search)
+8. [Shopping List](#Shopping-List)
+9. [Screenshots](#Screenshots)
+    - [Public Visitor Endpoints](#Public-Visitor-Endpoints)
+    - [Secure User Endpoint](#Secure-User-Endpoints)
+10. [Potential Future Features](#Potential-Future-Features)
+11. [Lessons Learned](#Lessons-Learned)
 
 ## Overview
 
@@ -21,13 +51,15 @@ Check out some of the delicious recipes on Nutrifix, [here](https://nutrifixreci
 
 ## Brief
 
-- Build a full-stack app
-- Use an Express API, to serve your data from a Mongo database
-- Consume a separate, Public API
+- Work in a team, using **git to code collaboratively**.
+- **Build a full-stack application** by making your own backend and your own front-end
+- **Use an Express API** to serve your data from a Mongo database
+- **Consume your API with a separate front-end** built with React
+- **Be a complete product** which most likely means multiple relationships and CRUD functionality for at least a couple of models
 - Front-end built with React
 - Have several components - At least one classical and one functional.
 - The app should include a router - with several "pages".
-- Be deployed online and accessible to the public.
+- **Be deployed online** so it's publicly accessible.
 
 ## Technologies Used
 
@@ -231,9 +263,13 @@ router.route('/myrecipes')
 
 Bcrypt is a encryption library that helps you hash passwords. This ensures that the actual password is never stored in our database, instead it asigns the hash password to the users password. Using this library in conjunction with **mongoose-hidden** (which hides the users password), improves the security of the website and privacy of the user.
 
+<img src="./images/bcrypt.png"/> <br/>
+
 ### Token
 
 A token is assigned to the user which has an expiry of 12 hours.
+
+<img src="./images/token.png"/> <br/>
 
 JWT (json web token) allows the user to access routes, services, and resources that are permitted with that token. In this case, the user is able to post, edit and delete their recipe. 
 
@@ -247,6 +283,8 @@ Additionally, a secret was implemented, to further elevate security for the user
 ## DisplayRecipes
 
 ### Tags
+<img src="./images/recipes-filtered.png"/> <br/>
+
 ``` js
 handleTags() {
     const clickedTags = [...this.state.clickedTags]
@@ -286,16 +324,21 @@ handleTags() {
 - We also mapped over the tags in this.state to render the tags below the hero.
 
 ### Getting the recipes from the back-end API
+
+- We used Axios to get the data from the backend and stored it in the state as an empty array.
+
 ```js
 componentDidMount() {
     axios.get('/api/recipes')
       .then((res) => this.setState({ recipeList: res.data, filteredRecipes: res.data }))
   }
 ```
-- We used Axios to get the data from the backend and stored it in the state as an empty array.
-
 
 ### Rendering Recipes
+
+- To display the recipes on the page we used a CDN called Bulma. This proved to be quite useful in terms of time efiiciency as we could use preset SCSS classes rather than styling the whole page manually.
+- We mapped over the recipes to display them (similar to the tags).
+
 ``` js
 <div className="container">
           <div className="columns is-multiline">
@@ -322,10 +365,15 @@ componentDidMount() {
           </div>
         </div>
 ```
-- To display the recipes on the page we used a CDN called Bulma. This proved to be quite useful in terms of time efiiciency as we could use preset SCSS classes rather than styling the whole page manually.
-- We mapped over the recipes to display them (similar to the tags).
 
 ### My Recipes (creating your own)
+
+<img src="./images/new-recipe1.png"/> <br/>
+<img src="./images/new-recipe2.png"/> <br/>
+
+- For creating your own recipes we used similar logic to diplay the recipes. However, we had decided to make it a 'secure route' so that only users that were logged in could create their own recipes.
+- To achieve this we needed to check if the user has a JWT (JSONWebToken) using the function getToken().
+
 ```js
 componentDidMount() {
     axios.get('/api/myrecipes',
@@ -334,8 +382,6 @@ componentDidMount() {
       .catch(err => console.error(err))
   }
 ```
-- For creating your own recipes we used similar logic to diplay the recipes. However, we had decided to make it a 'secure route' so that only users that were logged in could create their own recipes.
-- To achieve this we needed to check if the user has a JWT (JSONWebToken) using the function getToken().
 
 ### Single Recipe
 - Single recipe is a page that displays more information about a recipe when the card is clicked from display recipes using Bulma tiles. This page would display information such as Macronutrients, calories, ingredients and instructions on how to make said recipe.
@@ -474,6 +520,12 @@ After the user has submitted the new ingredient, handleSubmit(event) adds the it
 ### Welcome Page
 ![Welcome Page](/images/welcome.png)
 
+### Register Page
+![Register Page](/images/register.png)
+
+### Login Page
+![Login Page](/images/login.png)
+
 ### All Recipes Page
 ![All Recipes Page](/images/recipes.png)
 
@@ -485,21 +537,20 @@ After the user has submitted the new ingredient, handleSubmit(event) adds the it
 
 ### Search Ingredients Page
 ![Search Ingredients Page](/images/ingredient.png)
+![Search Ingredients Page](/images/ingredient-details.png)
 
 ### Shopping List Page
 ![Shopping List Page](/images/shoppingList.png)
 
-### Register Page
-![Register Page](/images/register.png)
-
-### Login Page
-![Login Page](/images/login.png)
 
 ## Potential Future Features
 
 - Create a shopping list schema and controller, to store our frontend data.
 - Enable our frontend external API to talk to our backend database. For example when you search chicken, we can display all the recipes containing chicken.
 
+## Challenge & Wins 
+
+- One of our main challenges was filtering the recipes by tag as well as allowing the user to select and deselect the tags (when adding a new recipe). e.g. vegan. We resolved this problem by spreading the tags into a new array and storing the filtered recipes in a separate piece of state rather than modifying the original recipes.
 
 ## Lessons Learned
 

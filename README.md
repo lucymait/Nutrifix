@@ -548,9 +548,9 @@ After the user has submitted the new ingredient, handleSubmit(event) adds the it
 - Create a shopping list schema and controller, to store our frontend data.
 - Enable our frontend external API to talk to our backend database. For example when you search chicken, we can display all the recipes containing chicken.
 
-## Challenge & Wins 
+## Biggest Challenge & Wins 
 
-- One of our main challenges was filtering the recipes by tag as well as allowing the user to select and deselect the tags (when adding a new recipe). e.g. vegan. We resolved this problem by spreading the tags into a new array and storing the filtered recipes in a separate piece of state rather than modifying the original recipes.
+- Our main challenge was filtering the recipes by tag as well as allowing the user to select and deselect the tags (when adding a new recipe). e.g. vegan. We resolved this problem by spreading the tags into a new array and storing the filtered recipes in a separate piece of state rather than modifying the original recipes.
 
 ## Lessons Learned
 

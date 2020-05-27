@@ -51,7 +51,7 @@ Check out some of the delicious recipes on Nutrifix, [here](https://nutrifixreci
 
 ## Brief
 
-- Work in a team, using **git to code collaboratively**.
+- Work in a team, using **git to code collaboratively**
 - **Build a full-stack application** by making a backend and a front-end
 - **Use an Express API** to serve data from a Mongo database
 - **Consume the API with a separate front-end** built with React
@@ -84,8 +84,8 @@ We took a MVC approach to create a functional backend.
 
 The components we used consisted of:
 
-- Models (both a recipe.js and user.js), 
-- View (router.js),
+- Models (both a recipe.js and user.js);
+- View (router.js);
 - Controllers (recipeController.js and userController.js).
 
 Our API seed consisted of a User Database:
@@ -160,7 +160,7 @@ For example in our user schema the user would have to fill out:
 
 We created a user schema to enable the user to register and login in the frontend. 
 
-In order to stop the user registering mulptiple times, with the same credentials, we utilised **mongoose-unique-validator**.
+In order to stop the user registering multiple times, with the same credentials, we utilised **mongoose-unique-validator**.
 
 ```js
 const schema = new mongoose.Schema({
@@ -176,7 +176,7 @@ All our properties had a type and were required true, except Tags, to guarantee 
 
 A user property was included in our schema to associate a recipe with a user, so that they can only utilise a secure route (as explained below).
 
-One of the challenges with designing our recipe schema was ensuring the 'type' field was accessible in the frontend. Initially the instructions had a 'type: String' but we soon realised that this wasn't practical and therefore 'type: Array' was more desired.
+One of the challenges with designing our recipe schema was ensuring the 'type' field was accessible in the frontend. Initially, the instructions had a 'type: String' but we soon realised that this wasn't practical and therefore 'type: Array' was more desired.
 
 ```js
 const schema = new mongoose.Schema({
@@ -220,7 +220,7 @@ There were 6 functions within the user controller:
 
 Each of these functions extend the API requests, as seen in the router.js.
 
-Our initial idea was to create a myRecipes endpoint, whereby the user could post a single recipe to an endpoint, which would be stored in a separate database. However this proved to be infeasible, therefore we decided to create the below function which extends a secure route in router.js.
+Our initial idea was to create a myRecipes endpoint, whereby the user could post a single recipe to an endpoint, which would be stored in a separate database. However, this proved to be infeasible, therefore we decided to create the below function which extends a secure route in router.js.
 
 ```js
 function myRecipes(req, res) {
@@ -370,7 +370,7 @@ componentDidMount() {
 <img src="./images/new-recipe1.png"/> <br/>
 <img src="./images/new-recipe2.png"/> <br/>
 
-- For creating your own recipes we used similar logic to diplay the recipes. However, we had decided to make it a 'secure route' so that only users that were logged in could create their own recipes.
+- For creating your own recipes we used similar logic to diplay the recipes. However, we decided to make it a 'secure route' so that only users that were logged in could create their own recipes.
 - To achieve this we needed to check if the user has a JWT (JSONWebToken) using the function getToken().
 
 ```js
@@ -549,7 +549,7 @@ After the user has submitted the new ingredient, handleSubmit(event) adds the it
 
 ## Biggest Challenge & Wins 
 
-- Our main challenge was filtering the recipes by tag as well as allowing the user to select and deselect the tags (when adding a new recipe). e.g. vegan. We resolved this problem by spreading the tags into a new array and storing the filtered recipes in a separate piece of state rather than modifying the original recipes.
+- Our main challenge was filtering the recipes by tag as well as allowing the user to select and deselect the tags (when adding a new recipe), e.g. vegan. We resolved this problem by spreading the tags into a new array and storing the filtered recipes in a separate piece of state rather than modifying the original recipes.
 
 ## Lessons Learned
 
